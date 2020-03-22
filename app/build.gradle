@@ -78,4 +78,6 @@ dependencies {
     // Koin Android ViewModel features
     implementation "org.koin:koin-android-viewmodel:$koin_version"
 
+    //Run time Permission
+    implementation 'com.karumi:dexter:6.0.2'
 }

@@ -50,12 +50,13 @@
                         android:textColor="@color/white" />
 
                     <TextView
+                        android:id="@+id/txtWorldTotalCases"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/margin_border_small"
                         android:layout_marginBottom="@dimen/margin_border_small"
-                        android:text="317,008"
+                        android:text="0"
                         android:textColor="@color/white"
                         android:textSize="26sp" />
 
@@ -76,25 +77,28 @@
                         android:layout_marginTop="@dimen/margin_border_small">
 
                         <TextView
+                            android:id="@+id/txtTotalDeaths"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Death\n4"
+                            android:text="Death\n0"
                             android:textColor="@color/white" />
 
                         <TextView
+                            android:id="@+id/txtTotalRecovered"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:gravity="center"
-                            android:text="Recovered\n24"
+                            android:text="Recovered\n0"
                             android:textColor="@color/white" />
                     </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <RelativeLayout
+                android:id="@+id/includedRoot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_border"
@@ -112,6 +116,7 @@
                     android:textStyle="bold" />
 
                 <include
+                    android:id="@+id/includedItemCountry"
                     layout="@layout/stats_view_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
