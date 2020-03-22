@@ -42,12 +42,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun getStatsFromApi() {
-        homeViewModel.getCases().observe(this, Observer { outcome ->
+        homeViewModel.getCases().observe(viewLifecycleOwner, Observer { outcome ->
             homeProgress.gone()
             when (outcome) {
                 is Outcome.Success -> {
                     Log.d(TAG, "onActivityCreated: ${outcome.data}")
-                    fillListUI(outcome.data.countriesStat)
+                    fillListUI(outcome.data.countriesStat.take(10))
                 }
                 is Outcome.Failure -> {
                     Toast.makeText(activity!!, outcome.e.message, Toast.LENGTH_SHORT).show()

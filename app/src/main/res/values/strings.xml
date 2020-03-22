@@ -3,4 +3,9 @@
     <string name="home">Home</string>
     <string name="guide">Guide</string>
     <string name="settings">Settings</string>
+    <string name="most_infected">Most Infected</string>
+    <string name="view_all">View All</string>
+    <string name="your_country">Your Country</string>
+    <string name="total_cases">Total Cases</string>
+    <string name="info">Info</string>
 </resources>

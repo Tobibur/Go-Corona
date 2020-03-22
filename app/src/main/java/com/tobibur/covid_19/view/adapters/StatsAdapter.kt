@@ -24,10 +24,8 @@ class StatsAdapter(private val statsList: List<CountriesStat>):
     override fun onBindViewHolder(holder: StatsViewHolder, position: Int) {
         val stats = statsList[position]
         holder.itemView.apply {
-            txtCountryName.text = "Country: ${stats.countryName}"
-            txtCases.text = "Total cases: ${stats.cases}"
-            txtDeaths.text = "Total deaths: ${stats.deaths}"
-            txtRecovered.text = "Total Recovered: ${stats.totalRecovered}"
+            txtCountryName.text = "${stats.countryName}"
+            txtCases.text = "${stats.cases}"
         }
     }
 }
