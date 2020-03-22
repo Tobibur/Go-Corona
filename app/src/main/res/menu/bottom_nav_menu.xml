@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_cinema"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/guideFragment"
+        android:icon="@drawable/ic_tv"
+        android:title="@string/guide" />
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings_icon"
+        android:title="@string/settings" />
+
+</menu>
