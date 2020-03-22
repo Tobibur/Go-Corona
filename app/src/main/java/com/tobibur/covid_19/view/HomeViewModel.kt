@@ -9,4 +9,8 @@ class HomeViewModel(private val statsRepository: WorldStatsRepository) : ViewMod
     fun getCases() = liveData {
         emit(statsRepository.getCases())
     }
+
+    fun getWorldStat() = liveData {
+        emit(statsRepository.getTotalStats())
+    }
 }

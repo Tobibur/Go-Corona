@@ -60,7 +60,24 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         getLocationPermission()
+        getTotalStats()
         getStatsFromApi()
+    }
+
+    private fun getTotalStats() {
+        homeViewModel.getWorldStat().observe(viewLifecycleOwner, Observer { outcome ->
+            when (outcome) {
+                is Outcome.Success -> {
+                    Log.d(TAG, "onActivityCreated: ${outcome.data}")
+                    txtWorldTotalCases.text = outcome.data.totalCases
+                    txtTotalDeaths.text = "Deaths\n" + outcome.data.totalDeaths
+                    txtTotalRecovered.text = "Recovered\n" + outcome.data.totalDeaths
+                }
+                is Outcome.Failure -> {
+                    Toast.makeText(activity!!, outcome.e.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
     private fun getStatsFromApi() {
@@ -78,7 +95,7 @@ class HomeFragment : Fragment() {
                             includedItemCountry.txtCountryName.text = countryCase[0].countryName
                             includedItemCountry.txtCases.text = countryCase[0].cases
                         }
-                    }else{
+                    } else {
                         includedRoot.gone()
                     }
                 }
