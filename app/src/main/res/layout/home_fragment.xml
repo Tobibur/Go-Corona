@@ -95,6 +95,7 @@
             </androidx.cardview.widget.CardView>
 
             <RelativeLayout
+                android:id="@+id/includedRoot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_border"
@@ -112,6 +113,7 @@
                     android:textStyle="bold" />
 
                 <include
+                    android:id="@+id/includedItemCountry"
                     layout="@layout/stats_view_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
