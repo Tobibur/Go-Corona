@@ -2,9 +2,7 @@ package com.tobibur.covid_19.view
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -71,6 +69,35 @@ class HomeFragment : Fragment() {
             )
 
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+
+//        val menuInflater = menuInflater
+        inflater.inflate(R.menu.search_menu, menu)
+
+        super.onCreateOptionsMenu(menu, inflater)
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+
+            R.id.app_bar_search -> openSearchFragment()
+
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun openSearchFragment() {
+
     }
 
 }
