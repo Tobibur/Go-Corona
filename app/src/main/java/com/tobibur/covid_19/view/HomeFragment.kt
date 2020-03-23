@@ -71,7 +71,7 @@ class HomeFragment : Fragment() {
                     Log.d(TAG, "onActivityCreated: ${outcome.data}")
                     txtWorldTotalCases.text = outcome.data.totalCases
                     txtTotalDeaths.text = "Deaths\n" + outcome.data.totalDeaths
-                    txtTotalRecovered.text = "Recovered\n" + outcome.data.totalDeaths
+                    txtTotalRecovered.text = "Recovered\n" + outcome.data.totalRecovered
                 }
                 is Outcome.Failure -> {
                     Toast.makeText(activity!!, outcome.e.message, Toast.LENGTH_SHORT).show()
