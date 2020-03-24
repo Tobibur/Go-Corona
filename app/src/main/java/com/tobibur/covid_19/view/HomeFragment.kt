@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -62,6 +63,10 @@ class HomeFragment : Fragment() {
         getLocationPermission()
         getTotalStats()
         getStatsFromApi()
+
+        txtViewAll.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_viewAllStatsFragment)
+        }
     }
 
     private fun getTotalStats() {
