@@ -13,6 +13,7 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -60,6 +61,10 @@ class HomeFragment : Fragment() {
         getLocationPermission()
         getTotalStats()
         getStatsFromApi()
+
+        txtViewAll.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_viewAllStatsFragment)
+        }
     }
 
     private fun getTotalStats() {
@@ -69,7 +74,7 @@ class HomeFragment : Fragment() {
                     Log.d(TAG, "onActivityCreated: ${outcome.data}")
                     txtWorldTotalCases.text = outcome.data.totalCases
                     txtTotalDeaths.text = "Deaths\n" + outcome.data.totalDeaths
-                    txtTotalRecovered.text = "Recovered\n" + outcome.data.totalDeaths
+                    txtTotalRecovered.text = "Recovered\n" + outcome.data.totalRecovered
                 }
                 is Outcome.Failure -> {
                     Toast.makeText(activity!!, outcome.e.message, Toast.LENGTH_SHORT).show()

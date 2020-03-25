@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.tobibur.covid_19.view.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_viewAllStatsFragment"
+            app:destination="@id/viewAllStatsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/guideFragment"
         android:name="com.tobibur.covid_19.view.GuideFragment"
@@ -20,4 +24,9 @@
         android:name="com.tobibur.covid_19.view.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/settings_fragment" />
+    <fragment
+        android:id="@+id/viewAllStatsFragment"
+        android:name="com.tobibur.covid_19.view.ViewAllStatsFragment"
+        android:label="Cases"
+        tools:layout="@layout/fragment_view_all_stats" />
 </navigation>
