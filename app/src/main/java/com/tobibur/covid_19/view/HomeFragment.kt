@@ -27,6 +27,7 @@ import com.tobibur.covid_19.R
 import com.tobibur.covid_19.db.Cache
 import com.tobibur.covid_19.model.CountriesStat
 import com.tobibur.covid_19.network.Outcome
+import com.tobibur.covid_19.utils.ItemClickListener
 import com.tobibur.covid_19.utils.gone
 import com.tobibur.covid_19.utils.toast
 import com.tobibur.covid_19.view.adapters.StatsAdapter
@@ -35,7 +36,7 @@ import kotlinx.android.synthetic.main.stats_view_item.view.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import java.util.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), ItemClickListener {
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -48,6 +49,7 @@ class HomeFragment : Fragment() {
     private var locationManager: LocationManager? = null
     private var locationListener: LocationListener? = null
 
+    lateinit var updatedAt: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -89,6 +91,7 @@ class HomeFragment : Fragment() {
             when (outcome) {
                 is Outcome.Success -> {
                     Log.d(TAG, "onActivityCreated: ${outcome.data}")
+                    updatedAt = outcome.data.statisticTakenAt
                     fillListUI(outcome.data.countriesStat.take(10))
                     countryName = Cache(activity!!).getData(Cache.COUNTRY_NAME)
                     if (countryName != null) {
@@ -110,7 +113,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun fillListUI(countriesStat: List<CountriesStat>) {
-        val statsAdapter = StatsAdapter(countriesStat)
+        val statsAdapter = StatsAdapter(countriesStat, this)
         val linearLayoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         statsRecycler.apply {
             layoutManager = linearLayoutManager
@@ -251,6 +254,18 @@ class HomeFragment : Fragment() {
     }
 
     private fun openSearchFragment() {
+        findNavController().navigate(R.id.action_homeFragment_to_viewAllStatsFragment)
+//        HomeFragmentDirections.actionHomeFragmentToViewAllStatsFragment()
+
+    }
+
+    override fun onItemClick(statsObject: CountriesStat) {
+
+        Log.d("statsadapter", "Home Fragment Click to hua hai")
+
+
+        val directions = HomeFragmentDirections.actionHomeFragmentToDetailFragment(statsObject, updatedAt)
+        findNavController().navigate(directions)
 
     }
 

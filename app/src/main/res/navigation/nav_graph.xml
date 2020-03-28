@@ -8,25 +8,42 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.tobibur.covid_19.view.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/home_fragment" >
+        android:label="@string/app_name"
+        tools:layout="@layout/home_fragment">
         <action
             android:id="@+id/action_homeFragment_to_viewAllStatsFragment"
             app:destination="@id/viewAllStatsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/guideFragment"
         android:name="com.tobibur.covid_19.view.GuideFragment"
-        android:label="Guide"
+        android:label="Precautions"
         tools:layout="@layout/guide_fragment" />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.tobibur.covid_19.view.SettingsFragment"
-        android:label="Settings"
+        android:label="Help"
         tools:layout="@layout/settings_fragment" />
     <fragment
         android:id="@+id/viewAllStatsFragment"
         android:name="com.tobibur.covid_19.view.ViewAllStatsFragment"
-        android:label="Cases"
-        tools:layout="@layout/fragment_view_all_stats" />
+        tools:layout="@layout/fragment_view_all_stats">
+        <action
+            android:id="@+id/action_viewAllStatsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.tobibur.covid_19.view.DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="statsObject"
+            app:argType="com.tobibur.covid_19.model.CountriesStat" />
+        <argument
+            android:name="updatedAt"
+            app:argType="string" />
+    </fragment>
 </navigation>
