@@ -20,7 +20,6 @@ import com.tobibur.covid_19.model.CountriesStat
 import com.tobibur.covid_19.network.Outcome
 import com.tobibur.covid_19.utils.ItemClickListener
 import com.tobibur.covid_19.utils.gone
-import com.tobibur.covid_19.utils.toast
 import com.tobibur.covid_19.view.adapters.StatsAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_view_all_stats.*
@@ -32,6 +31,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
  */
 class ViewAllStatsFragment : Fragment(), ItemClickListener {
 
+    private val countryList = mutableListOf<CountriesStat>()
     private val homeViewModel: HomeViewModel by viewModel()
 
     lateinit var updatedAt: String
@@ -52,6 +52,12 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
         super.onActivityCreated(savedInstanceState)
 
 
+        recyclerViewAllStats.addItemDecoration(
+            DividerItemDecoration(
+                activity,
+                DividerItemDecoration.VERTICAL
+            )
+        )
 
         activity!!.search_edittext.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -72,7 +78,8 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
                     Log.d(TAG, "onActivityCreated: ${outcome.data}")
 
                     updatedAt = outcome.data.statisticTakenAt
-                    fillListUI(outcome.data.countriesStat)
+                    countryList.addAll(outcome.data.countriesStat)
+                    fillListUI(countryList)
                 }
                 is Outcome.Failure -> {
                     Toast.makeText(activity!!, outcome.e.message, Toast.LENGTH_SHORT).show()
@@ -82,9 +89,9 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
     }
 
     private fun performSearch(text: CharSequence) {
-//        TODO: Perform Search Here.
-
-        activity!!.toast(text.toString())
+        fillListUI(countryList.filter {
+            it.countryName.toLowerCase().contains(text)
+        })
     }
 
     private fun fillListUI(countriesStat: List<CountriesStat>) {
@@ -94,18 +101,16 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
             layoutManager = linearLayoutManager
             adapter = statsAdapter
             setHasFixedSize(true)
-            addItemDecoration(
-                DividerItemDecoration(
-                    activity,
-                    DividerItemDecoration.VERTICAL
-                )
-            )
-
         }
     }
 
     override fun onItemClick(statsObject: CountriesStat) {
-        findNavController().navigate(ViewAllStatsFragmentDirections.actionViewAllStatsFragmentToDetailFragment(statsObject, updatedAt))
+        findNavController().navigate(
+            ViewAllStatsFragmentDirections.actionViewAllStatsFragmentToDetailFragment(
+                statsObject,
+                updatedAt
+            )
+        )
     }
 
 }
