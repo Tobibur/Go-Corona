@@ -6,6 +6,13 @@
     android:layout_height="match_parent">
 
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/toolbar_container">
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -44,6 +51,9 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    </com.google.android.material.appbar.AppBarLayout>
+
+
 
     <fragment
         android:id="@+id/nav_host_fragment"
@@ -51,7 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/nav_view"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/toolbar_container"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
 

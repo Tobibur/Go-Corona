@@ -48,6 +48,7 @@ class HomeFragment : Fragment(), ItemClickListener {
     private val homeViewModel: HomeViewModel by viewModel()
     private var locationManager: LocationManager? = null
     private var locationListener: LocationListener? = null
+    private var statsAdapter: StatsAdapter? = null
 
     lateinit var updatedAt: String
 
@@ -60,6 +61,7 @@ class HomeFragment : Fragment(), ItemClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        initRecyclerView()
         getLocationPermission()
         getTotalStats()
         getStatsFromApi()
@@ -113,12 +115,18 @@ class HomeFragment : Fragment(), ItemClickListener {
     }
 
     private fun fillListUI(countriesStat: List<CountriesStat>) {
-        val statsAdapter = StatsAdapter(countriesStat, this)
-        val linearLayoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+
+        statsAdapter?.submitList(countriesStat)
+
+    }
+
+    private fun initRecyclerView(){
+
+        statsAdapter = StatsAdapter(this)
+//        val linearLayoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         statsRecycler.apply {
-            layoutManager = linearLayoutManager
+//            layoutManager = linearLayoutManager
             adapter = statsAdapter
-            setHasFixedSize(true)
             addItemDecoration(
                 DividerItemDecoration(
                     activity,

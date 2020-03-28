@@ -7,6 +7,7 @@
     <color name="white">#ffffff</color>
     <color name="niceGray">#737474</color>
     <color name="xdGray">#989090</color>
+    <color name="statusBarColor">#cccccc</color>
 
 
 </resources>

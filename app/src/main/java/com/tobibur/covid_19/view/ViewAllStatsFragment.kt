@@ -13,8 +13,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.tobibur.covid_19.R
 import com.tobibur.covid_19.model.CountriesStat
 import com.tobibur.covid_19.network.Outcome
@@ -34,6 +32,8 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
     private val countryList = mutableListOf<CountriesStat>()
     private val homeViewModel: HomeViewModel by viewModel()
 
+    private var statsAdapter: StatsAdapter? = null
+
     lateinit var updatedAt: String
 
     companion object {
@@ -52,12 +52,13 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
         super.onActivityCreated(savedInstanceState)
 
 
-        recyclerViewAllStats.addItemDecoration(
-            DividerItemDecoration(
-                activity,
-                DividerItemDecoration.VERTICAL
-            )
-        )
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initRecyclerView()
+
 
         activity!!.search_edittext.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -88,6 +89,7 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
         })
     }
 
+
     private fun performSearch(text: CharSequence) {
         fillListUI(countryList.filter {
             it.countryName.toLowerCase().contains(text)
@@ -95,12 +97,23 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
     }
 
     private fun fillListUI(countriesStat: List<CountriesStat>) {
-        val statsAdapter = StatsAdapter(countriesStat, this)
-        val linearLayoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+
+        statsAdapter?.submitList(countriesStat)
+
+    }
+
+    private fun initRecyclerView() {
+        statsAdapter = StatsAdapter(this)
+//        val linearLayoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         recyclerViewAllStats.apply {
-            layoutManager = linearLayoutManager
+//            layoutManager = linearLayoutManager
             adapter = statsAdapter
-            setHasFixedSize(true)
+            addItemDecoration(
+                DividerItemDecoration(
+                    activity,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
         }
     }
 
@@ -112,5 +125,6 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
             )
         )
     }
+
 
 }

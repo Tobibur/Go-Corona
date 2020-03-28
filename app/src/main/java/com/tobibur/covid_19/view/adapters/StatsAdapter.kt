@@ -3,6 +3,8 @@ package com.tobibur.covid_19.view.adapters
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.tobibur.covid_19.R
 import com.tobibur.covid_19.model.CountriesStat
@@ -11,10 +13,9 @@ import com.tobibur.covid_19.utils.ItemClickListener
 import kotlinx.android.synthetic.main.stats_view_item.view.*
 
 class StatsAdapter(
-    private val statsList: List<CountriesStat>,
     private val itemClickListener: ItemClickListener
 ) :
-    RecyclerView.Adapter<StatsAdapter.StatsViewHolder>() {
+    ListAdapter<CountriesStat, StatsAdapter.StatsViewHolder>(StatsDiffUtil()) {
 
     inner class StatsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
@@ -22,15 +23,13 @@ class StatsAdapter(
         return StatsViewHolder(parent.inflate(R.layout.stats_view_item))
     }
 
-    override fun getItemCount(): Int {
-        return statsList.size
-    }
+
 
     override fun onBindViewHolder(holder: StatsViewHolder, position: Int) {
-        val stats = statsList[position]
+        val stats = getItem(position)
         holder.itemView.apply {
-            txtCountryName.text = "${stats.countryName}"
-            txtCases.text = "${stats.cases}"
+            txtCountryName.text = (stats.countryName)
+            txtCases.text = (stats.cases)
 
             setOnClickListener {
                 Log.d("statsadapter", "Adapter to Click to hua hai")
@@ -39,4 +38,16 @@ class StatsAdapter(
             }
         }
     }
+}
+
+class StatsDiffUtil: DiffUtil.ItemCallback<CountriesStat>(){
+    override fun areItemsTheSame(oldItem: CountriesStat, newItem: CountriesStat): Boolean {
+        return oldItem.countryName == newItem.countryName
+    }
+
+    override fun areContentsTheSame(oldItem: CountriesStat, newItem: CountriesStat): Boolean {
+        return oldItem == newItem
+    }
+
+
 }

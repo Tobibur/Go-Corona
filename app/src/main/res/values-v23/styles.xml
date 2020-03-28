@@ -4,9 +4,10 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/statusBarColor</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="fontFamily">@font/poppins_font</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <!--<item name="android:windowLightStatusBar">true</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
     </style>
 </resources>
