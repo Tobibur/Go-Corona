@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,17 +10,17 @@
         android:id="@+id/homeProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_centerInParent="true" />
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/bottom_nav_padding">
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -31,7 +31,8 @@
                 android:layout_marginEnd="@dimen/margin_border"
                 android:layout_marginBottom="@dimen/margin_border_small"
                 app:cardBackgroundColor="@color/colorAccent"
-                app:cardCornerRadius="@dimen/margin_border"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
                 app:cardUseCompatPadding="true"
                 app:contentPadding="@dimen/margin_border">
 
@@ -60,16 +61,6 @@
                         android:textColor="@color/white"
                         android:textSize="26sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
-                        android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-                        android:drawableTint="@color/white"
-                        android:gravity="center"
-                        android:text="@string/info"
-                        android:textColor="@color/white" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -158,6 +149,6 @@
                 android:clipToPadding="false" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-</FrameLayout>
+</RelativeLayout>

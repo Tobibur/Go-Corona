@@ -6,12 +6,14 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.tobibur.covid_19"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -80,4 +82,10 @@ dependencies {
 
     //Run time Permission
     implementation 'com.karumi:dexter:6.0.2'
+
+    implementation "com.airbnb.android:lottie:3.4.0"
+
+
 }
+
+

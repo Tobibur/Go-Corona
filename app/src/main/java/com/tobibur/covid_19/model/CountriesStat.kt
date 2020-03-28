@@ -2,6 +2,7 @@ package com.tobibur.covid_19.model
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class CountriesStat(
     @SerializedName("active_cases")
@@ -24,4 +25,4 @@ data class CountriesStat(
     val totalCasesPer1mPopulation: String,
     @SerializedName("total_recovered")
     val totalRecovered: String
-)
+) : Serializable
