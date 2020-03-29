@@ -25,8 +25,6 @@ class GuideFragment : Fragment(), TipsClickListner {
         fun newInstance() = GuideFragment()
     }
 
-//    private lateinit var viewModel: GuideViewModel
-
     private val guideViewModel: GuideViewModel by viewModel()
     lateinit var tipsAdapter: TipsAdapter
     private var dotscount = 0
@@ -47,7 +45,6 @@ class GuideFragment : Fragment(), TipsClickListner {
 
 
         dotscount = viewPagerAdapter.count
-        dots = mutableListOf<ImageView>()
 
         for (i in 0 until dotscount) {
             dots.add(ImageView(activity))
