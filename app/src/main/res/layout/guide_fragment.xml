@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginStart="14dp"
-        android:text="@string/tips"
+        android:text="Information"
         android:layout_marginLeft="14dp" />
 
     <androidx.recyclerview.widget.RecyclerView
