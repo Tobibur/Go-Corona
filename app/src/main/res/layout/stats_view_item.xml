@@ -2,9 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="@dimen/margin_border"
     android:layout_marginEnd="@dimen/margin_border"
     android:orientation="vertical"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
     android:paddingTop="@dimen/margin_border_small"
     android:paddingBottom="@dimen/margin_border_small">
 
@@ -12,7 +16,7 @@
         android:id="@+id/txtCountryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Country:"
+        tools:text="Country:"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
@@ -24,7 +28,7 @@
         android:layout_alignParentRight="true"
         android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
         android:drawableRight="@drawable/ic_chevron_right_black_24dp"
-        android:text="Cases:"
+        tools:text="Cases:"
         android:gravity="center"
         android:textSize="18sp" />
 

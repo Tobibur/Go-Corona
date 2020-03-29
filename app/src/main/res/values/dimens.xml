@@ -4,4 +4,6 @@
     <dimen name="margin_border_small">8dp</dimen>
     <dimen name="bottom_nav_padding">56dp</dimen>
     <dimen name="standar_icon_size">38dp</dimen>
+    <dimen name="heading_marginstart">22dp</dimen>
+    <dimen name="textMedium1">14sp</dimen>
 </resources>

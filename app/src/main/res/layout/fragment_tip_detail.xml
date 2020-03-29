@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".TipDetailFragment">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="12dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:id="@+id/tip_detail_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/handwash" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tip_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="14dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:text="The Truth About Vitamin D, Zinc and Other Coronavirus Rumors" />
+
+
+        <TextView
+            android:id="@+id/tip_details_writeup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="14dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:text="There is no research yet on whether zinc will impact the novel coronavirus, officially named SARS-CoV-2. However, zinc may interfere with the other six coronaviruses, including the original SARS and the four coronaviruses that cause the common cold.
+
+Whether zinc can prevent infections hasn’t been studied as much as its therapeutic properties. A study from 2010 in cells in a dish — which, it’s important to point out, are not full people — found that zinc blocked replication of the first SARS coronavirus. In humans, however, the data is conflicting. One meta-analysis of seven different studies found that zinc supplements shortened the duration of a cold, which may have been caused by either a coronavirus or a rhinovirus, by 33%. A more recent double-blind, placebo-controlled trial published by the same scientist did not see any difference in cold symptom duration between people who took zinc and those who took a placebo." />
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

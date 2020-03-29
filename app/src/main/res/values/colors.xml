@@ -8,6 +8,7 @@
     <color name="niceGray">#737474</color>
     <color name="xdGray">#989090</color>
     <color name="statusBarColor">#cccccc</color>
+    <color name="lightest_grey">#D4D5D5</color>
 
 
 </resources>

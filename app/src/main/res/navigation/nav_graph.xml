@@ -21,7 +21,11 @@
         android:id="@+id/guideFragment"
         android:name="com.tobibur.covid_19.view.GuideFragment"
         android:label="Precautions"
-        tools:layout="@layout/guide_fragment" />
+        tools:layout="@layout/guide_fragment" >
+        <action
+            android:id="@+id/action_guideFragment_to_tipDetailFragment"
+            app:destination="@id/tipDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.tobibur.covid_19.view.SettingsFragment"
@@ -45,5 +49,13 @@
         <argument
             android:name="updatedAt"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/tipDetailFragment"
+        android:name="com.tobibur.covid_19.TipDetailFragment"
+        android:label="Tip" >
+        <argument
+            android:name="tipsObject"
+            app:argType="com.tobibur.covid_19.model.Tips" />
     </fragment>
 </navigation>

@@ -41,5 +41,10 @@
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginTop">6dp</item>
     </style>
+    <style name="titleHeadingTxt">
+        <item name="android:textSize">@dimen/textMedium1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
 </resources>

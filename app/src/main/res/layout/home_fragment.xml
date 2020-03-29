@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".view.HomeFragment">
 
     <ProgressBar
@@ -98,13 +99,25 @@
                 android:layout_marginEnd="@dimen/margin_border"
                 android:layout_marginBottom="@dimen/margin_border_small">
 
+
+
                 <TextView
+                    style="@style/titleHeadingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtYourCountry"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="2dp"
+                    android:text="@string/your_country"
+                    android:layout_marginLeft="2dp" />
+
+                <!--<TextView
                     android:id="@+id/txtYourCountry"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/your_country"
                     android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold" />-->
 
                 <include
                     android:id="@+id/includedItemCountry"
@@ -120,16 +133,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_border"
                 android:layout_marginLeft="@dimen/margin_border"
-                android:layout_marginTop="@dimen/margin_border_small"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="@dimen/margin_border"
                 android:layout_marginBottom="@dimen/margin_border_small">
 
+
                 <TextView
+                    style="@style/titleHeadingTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:text="@string/most_infected"
+                    android:layout_marginLeft="2dp" />
+
+                <!--<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/most_infected"
                     android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold" />-->
 
                 <TextView
                     android:id="@+id/txtViewAll"

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/recent_topics_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="18dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="18dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/recently_learned_topic_container"
+            android:layout_width="82dp"
+            android:layout_height="62dp"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:id="@+id/tip_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_toEndOf="@+id/recently_learned_topic_container"
+            android:layout_toRightOf="@+id/recently_learned_topic_container"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tip_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:ellipsize="end"
+                tools:text="Euclid's Division Emma and polynomials of and a lot of Maths" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/recent_topics_container"
+        android:layout_alignParentBottom="true"
+        android:background="@color/lightest_grey" />
+</RelativeLayout>
