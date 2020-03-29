@@ -29,12 +29,15 @@ class GuideFragment : Fragment(), TipsClickListner {
     lateinit var tipsAdapter: TipsAdapter
     private var dotscount = 0
     private var dots = mutableListOf<ImageView>()
+    private lateinit var mSliderLayout: LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.guide_fragment, container, false)
+        val v = inflater.inflate(R.layout.guide_fragment, container, false)
+        mSliderLayout = v.findViewById(R.id.SliderDots)
+        return v
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,7 +62,7 @@ class GuideFragment : Fragment(), TipsClickListner {
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
             params.setMargins(8, 0, 8, 0)
-            SliderDots.addView(dots[i], params)
+            mSliderLayout.addView(dots[i], params)
         }
 
         dots[0].setImageDrawable(
@@ -127,6 +130,11 @@ class GuideFragment : Fragment(), TipsClickListner {
             )
         )
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        mSliderLayout.removeAllViews()
     }
 
 }
