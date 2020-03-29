@@ -31,6 +31,7 @@ class TipsAdapter(
             tip_title.text = tips.tipTitle
 
             recent_topics_container.setOnClickListener {
+
                 itemClickListener.onTipsClick(tips)
 
             }

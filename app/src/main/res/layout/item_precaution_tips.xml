@@ -53,11 +53,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textStyle="normal"
+                android:textStyle="bold"
                 android:maxLines="2"
                 android:textColor="@color/black"
                 android:ellipsize="end"
-                tools:text="Euclid's Division Emma and polynomials of and a lot of Maths" />
+                tools:text="Corona Overview" />
 
 
         </LinearLayout>
@@ -70,5 +70,6 @@
         android:layout_height="0.5dp"
         android:layout_below="@+id/recent_topics_container"
         android:layout_alignParentBottom="true"
+        android:visibility="visible"
         android:background="@color/lightest_grey" />
 </RelativeLayout>

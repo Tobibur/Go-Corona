@@ -32,8 +32,8 @@
             style="@style/titleHeadingTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="1dp"
             android:layout_marginTop="24dp"
             android:text="Information" />
 
@@ -41,7 +41,7 @@
             android:id="@+id/tips_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="4"
             tools:listitem="@layout/item_precaution_tips" />

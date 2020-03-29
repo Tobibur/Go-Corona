@@ -8,7 +8,7 @@ class GuideViewModel : ViewModel() {
 
     val tipsMutableList = mutableListOf(
         Tips(
-            R.drawable.handwash,
+            R.drawable.covid19,
             "Coronavirus Overview",
             "Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.\n" +
                     "\n" +
@@ -34,7 +34,7 @@ class GuideViewModel : ViewModel() {
                     "\u2022 Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people."
         ),
         Tips(
-            R.drawable.handwash,
+            R.drawable.symptoms,
             "Coronavirus Symptoms",
             "The COVID-19 virus affects different people in different ways.  COVID-19 is a respiratory disease and most infected people will develop mild to moderate symptoms and recover without requiring special treatment.  People who have underlying medical conditions and those over 60 years old have a higher risk of developing severe disease and death.\n" +
                     "\n" +
@@ -52,13 +52,6 @@ class GuideViewModel : ViewModel() {
                     "\nPeople with mild symptoms who are otherwise healthy should self-isolate and contact their medical provider or a COVID-19 information line for advice on testing and referral.\n" +
                     "\n" +
                     "People with fever, cough or difficulty breathing should call their doctor and seek medical attention."
-        ),
-        Tips(
-            R.drawable.handwash,
-            "The Truth About Vitamin D, Zinc, and Other Coronavirus Rumors",
-        "There is no research yet on whether zinc will impact the novel coronavirus, officially named SARS-CoV-2. However, zinc may interfere with the other six coronaviruses, including the original SARS and the four coronaviruses that cause the common cold.\n" +
-                "\n" +
-                "Whether zinc can prevent infections hasn’t been studied as much as its therapeutic properties. A study from 2010 in cells in a dish — which, it’s important to point out, are not full people — found that zinc blocked replication of the first SARS coronavirus. In humans, however, the data is conflicting. One meta-analysis of seven different studies found that zinc supplements shortened the duration of a cold, which may have been caused by either a coronavirus or a rhinovirus, by 33%. A more recent double-blind, placebo-controlled trial published by the same scientist did not see any difference in cold symptom duration between people who took zinc and those who took a placebo."
         )
 
     )
