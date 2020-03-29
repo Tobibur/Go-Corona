@@ -106,6 +106,10 @@ class HomeFragment : Fragment(), ItemClickListener {
                         if (countryCase.isNotEmpty()) {
                             includedItemCountry.txtCountryName.text = countryCase[0].countryName
                             includedItemCountry.txtCases.text = countryCase[0].cases
+                            includedItemCountry.setOnClickListener {
+                                val directions = HomeFragmentDirections.actionHomeFragmentToDetailFragment(countryCase[0], updatedAt)
+                                findNavController().navigate(directions)
+                            }
                         }
                     } else {
                         includedRoot.gone()
