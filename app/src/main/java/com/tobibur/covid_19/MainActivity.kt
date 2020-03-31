@@ -2,7 +2,6 @@ package com.tobibur.covid_19
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.homeFragment, R.id.guideFragment, R.id.settingsFragment
+                R.id.homeFragment, R.id.guideFragment, R.id.helpFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

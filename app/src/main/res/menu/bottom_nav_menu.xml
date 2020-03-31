@@ -12,7 +12,7 @@
         android:title="@string/guide" />
 
     <item
-        android:id="@+id/settingsFragment"
+        android:id="@+id/helpFragment"
         android:icon="@drawable/ic_help"
         android:title="@string/settings" />
 

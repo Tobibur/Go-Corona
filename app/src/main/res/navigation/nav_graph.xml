@@ -27,10 +27,10 @@
             app:destination="@id/tipDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.tobibur.covid_19.view.SettingsFragment"
+        android:id="@+id/helpFragment"
+        android:name="com.tobibur.covid_19.view.HelpFragment"
         android:label="Help"
-        tools:layout="@layout/settings_fragment" />
+        tools:layout="@layout/help_fragment" />
     <fragment
         android:id="@+id/viewAllStatsFragment"
         android:name="com.tobibur.covid_19.view.ViewAllStatsFragment"

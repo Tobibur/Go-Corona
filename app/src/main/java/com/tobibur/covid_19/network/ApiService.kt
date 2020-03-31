@@ -9,6 +9,6 @@ interface ApiService {
     @GET("cases_by_country.php")
     suspend fun getCasesByCountry(): Stats
 
-    @GET("worldstat.php")
+    @GET("world_total_stat.php")
     suspend fun getWorldStat(): WorldStat
 }
