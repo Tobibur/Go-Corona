@@ -1,6 +1,8 @@
 package com.tobibur.covid_19.utils
 
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

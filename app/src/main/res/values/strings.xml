@@ -19,4 +19,5 @@
     <string name="serious_cases">Serious Cases</string>
     <string name="search_country">Search Country...</string>
     <string name="tips">Tips</string>
+    <string name="error_loading">Error! please try again..</string>
 </resources>

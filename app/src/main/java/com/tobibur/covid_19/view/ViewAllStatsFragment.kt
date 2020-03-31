@@ -18,6 +18,7 @@ import com.tobibur.covid_19.model.CountriesStat
 import com.tobibur.covid_19.network.Outcome
 import com.tobibur.covid_19.utils.ItemClickListener
 import com.tobibur.covid_19.utils.gone
+import com.tobibur.covid_19.utils.toast
 import com.tobibur.covid_19.view.adapters.StatsAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_view_all_stats.*
@@ -83,7 +84,7 @@ class ViewAllStatsFragment : Fragment(), ItemClickListener {
                     fillListUI(countryList)
                 }
                 is Outcome.Failure -> {
-                    Toast.makeText(activity!!, outcome.e.message, Toast.LENGTH_SHORT).show()
+                    activity!!.toast(activity!!.getString(R.string.error_loading))
                 }
             }
         })

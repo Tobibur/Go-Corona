@@ -85,7 +85,7 @@ class HomeFragment : Fragment(), ItemClickListener {
                     txtTotalRecovered.text = "Recovered\n" + outcome.data.totalRecovered
                 }
                 is Outcome.Failure -> {
-                    Toast.makeText(activity!!, outcome.e.message, Toast.LENGTH_SHORT).show()
+                    activity!!.toast(activity!!.getString(R.string.error_loading))
                 }
             }
         })
@@ -116,7 +116,7 @@ class HomeFragment : Fragment(), ItemClickListener {
                     }
                 }
                 is Outcome.Failure -> {
-                    Toast.makeText(activity!!, outcome.e.message, Toast.LENGTH_SHORT).show()
+                    activity!!.toast(activity!!.getString(R.string.error_loading))
                 }
             }
         })
