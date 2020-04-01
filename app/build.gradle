@@ -9,6 +9,14 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\Asus\\Documents\\Workspace\\AndroidProjects\\keys\\covid.jks')
+            storePassword 'gocorona@19'
+            keyAlias = 'key0'
+            keyPassword 'gocorona@19'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
@@ -21,8 +29,9 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 

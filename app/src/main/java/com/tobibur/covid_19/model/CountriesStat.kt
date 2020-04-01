@@ -1,9 +1,11 @@
 package com.tobibur.covid_19.model
 
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
+@Keep
 data class CountriesStat(
     @SerializedName("active_cases")
     val activeCases: String,

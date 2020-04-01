@@ -24,12 +24,10 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="12dp"
-            android:layout_toEndOf="@+id/recently_learned_topic_container"
             android:orientation="vertical"
             android:layout_marginLeft="12dp"
             android:layout_toStartOf="@id/arrow_img"
             android:layout_marginEnd="14dp"
-            android:layout_toRightOf="@+id/recently_learned_topic_container"
             android:layout_toLeftOf="@id/arrow_img"
             android:layout_marginRight="14dp">
 
