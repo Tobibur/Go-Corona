@@ -35,7 +35,7 @@ class HelpFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        val helpLineAdapter = HelpLineAdapter(helpViewModel.helpLineList)
+        val helpLineAdapter = HelpLineAdapter(helpViewModel.helpLineList, activity!!)
         val linearLayoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         help_numbers_list.apply {
             layoutManager = linearLayoutManager

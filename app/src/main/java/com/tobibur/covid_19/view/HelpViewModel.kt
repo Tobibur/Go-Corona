@@ -34,6 +34,14 @@ class HelpViewModel : ViewModel() {
         Help("Tripura", "0381-2315879"),
         Help("Uttarakhand", "104"),
         Help("Uttar Pradesh", "18001805145"),
-        Help("West Bengal", "1800313444222, 03323412600")
+        Help("West Bengal", "1800313444222"),
+        Help("Andaman and Nicobar Islands", "03192-232102"),
+        Help("Chandigarh", "9779558282"),
+        Help("Dadra and Nagar Haveli and Daman & Diu", "104"),
+        Help("Delhi", "011-22307145"),
+        Help("Jammu & Kashmir", "01912520982"),
+        Help("Ladakh", "01982256462"),
+        Help("Lakshadweep", "104"),
+        Help("Puducherry", "104")
     )
 }
