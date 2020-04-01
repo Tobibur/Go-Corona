@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.tobibur.covid_19.view.HelpFragment"
-        android:label="Help"
+        android:label="Helpline"
         tools:layout="@layout/help_fragment" />
     <fragment
         android:id="@+id/viewAllStatsFragment"

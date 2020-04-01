@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/recent_topics_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/recently_learned_topic_container"
+            android:orientation="vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_toStartOf="@id/arrow_img"
+            android:layout_marginEnd="14dp"
+            android:layout_toRightOf="@+id/recently_learned_topic_container"
+            android:layout_toLeftOf="@id/arrow_img"
+            android:layout_marginRight="14dp">
+
+
+            <TextView
+                android:id="@+id/phoneName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Uttar Pradesh" />
+
+            <TextView
+                android:id="@+id/phoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                tools:text="+91 11224455899z" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/arrow_img"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/arrow_right"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/recent_topics_container"
+        android:layout_alignParentBottom="true"
+        android:background="@color/lightest_grey"/>
+</RelativeLayout>
