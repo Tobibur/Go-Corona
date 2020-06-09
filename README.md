@@ -1,4 +1,4 @@
-# Covid-19
+# Go-Corona
 Informational app on Coronavirus Pandemic
 
 Track coronavirus cases count around the world taken from https://www.worldometers.info/coronavirus/ and prevention tips from WHO with helpline numbers.
